@@ -1,3 +1,6 @@
+alias tower=gittower
+
+# Transfer.sh
 transfer() { 
     if [ $# -eq 0 ]; then 
         echo "No arguments specified. Usage:" 
