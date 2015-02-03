@@ -9,6 +9,6 @@ Vagrant.configure('2') do |config|
         git clone https://github.com/ben-rosio/dotfiles
         ./dotfiles/install.sh
         git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-        vim +PluginInstall +qall
+        vim +PluginInstall +qall > /dev/null
     EOF
 end
