@@ -1,6 +1,6 @@
 Vagrant.configure('2') do |config|
     config.vm.provision 'shell', privileged: false, inline: <<-EOF
-        type yum > /dev/null 2>1 || exit 0
+        type yum > /dev/null 2>&1 || exit 0
 
         cd ~
 
