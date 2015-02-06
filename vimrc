@@ -99,6 +99,7 @@ map <leader>ss :setlocal spell!<cr>
 map <leader>sn ]s
 map <leader>sp [s
 map <leader>sa zg
+map <leader>sb zw
 map <leader>s? z=
 
 " NerdTree
