@@ -6,8 +6,18 @@ filetype indent on
 
 set gdefault
 
+" Set mouse mode.
+set mouse=a
+
+if has('mouse_sgr')
+  set ttymouse=sgr
+endif
+
+" Allow backspace to remove lines.
+set backspace=indent,eol,start
+
 set history=700
-set so=4 " Set 7 lines to the cursor
+set so=4 " Set 4 lines to the cursor
 let mapleader = ","
 let g:mapleader = ","
 
@@ -31,7 +41,6 @@ set t_vb=
 set tm=500
 
 syntax enable
-" colorscheme 
 
 set expandtab
 set smarttab
@@ -111,34 +120,37 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist/*'
 " Close VIM if NERDTree is the only window left open.
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+" Show statusline always.
+set laststatus=2
+
 " Lightline
 let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
-      \ 'component': {
-      \   'readonly': '%{&readonly?"":""}',
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' },
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], ['ctrlpmark'] ],
-      \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
-      \ },
-      \ 'component_function': {
-      \   'fugitive': 'MyFugitive',
-      \   'filename': 'MyFilename',
-      \   'fileformat': 'MyFileformat',
-      \   'filetype': 'MyFiletype',
-      \   'fileencoding': 'MyFileencoding',
-      \   'mode': 'MyMode',
-      \   'ctrlpmark': 'CtrlPMark',
-      \ },
-      \ 'component_expand': {
-      \   'syntastic': 'SyntasticStatuslineFlag',
-      \ },
-      \ 'component_type': {
-      \   'syntastic': 'error',
-      \ },
-      \ }
+    \ 'colorscheme': 'jellybeans',
+    \ 'component': {
+        \ 'readonly': '%{&readonly?"":""}',
+    \ },
+    \ 'separator': { 'left': '', 'right': '' },
+    \ 'subseparator': { 'left': '', 'right': '' },
+    \ 'active': {
+        \ 'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], ['ctrlpmark'] ],
+        \ 'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+    \ },
+    \ 'component_function': {
+        \ 'fugitive': 'MyFugitive',
+        \ 'filename': 'MyFilename',
+        \ 'fileformat': 'MyFileformat',
+        \ 'filetype': 'MyFiletype',
+        \ 'fileencoding': 'MyFileencoding',
+        \ 'mode': 'MyMode',
+        \ 'ctrlpmark': 'CtrlPMark',
+    \ },
+    \ 'component_expand': {
+        \ 'syntastic': 'SyntasticStatuslineFlag',
+    \ },
+    \ 'component_type': {
+        \ 'syntastic': 'error',
+    \ },
+\ }
 
 function! MyModified()
   return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
@@ -232,11 +244,10 @@ function! TagbarStatusFunc(current, sort, fname, ...) abort
   return lightline#statusline(0)
 endfunction
 
-" set the runtime path to include Vundle and initialize
+" Plugins
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'L9'
@@ -251,6 +262,10 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'edkolev/promptline.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'flazz/vim-colorschemes'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+call vundle#end()
+
+colorscheme Tomorrow-Night-Eighties
