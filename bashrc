@@ -27,3 +27,6 @@ transfer() {
 } 
 
 alias transfer=transfer
+
+# username:directory hostname#
+export PS1="\[\e[00;37m\]\h:\W \u\\$\[\e[0m\] "
