@@ -6,6 +6,8 @@ filetype indent on
 
 set gdefault
 
+set modelines=1
+
 " Set mouse mode.
 set mouse=a
 
