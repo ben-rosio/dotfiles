@@ -105,7 +105,8 @@ map <leader>sb zw
 map <leader>s? z=
 
 " NerdTree
-map <leader>tt :NERDTreeToggle<cr>
+let g:nerdtree_tabs_open_on_new_tab=1
+map <leader>tt <plug>NERDTreeTabsToggle<cr>
 
 " When pressing enter it will also run :noh to turn off highlights from
 " previous search
@@ -275,6 +276,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'edkolev/promptline.vim'
 Plugin 'bling/vim-bufferline'
 Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/syntastic'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'flazz/vim-colorschemes'
