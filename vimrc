@@ -79,7 +79,7 @@ map <leader>tn :tabnew<cr>
 map <leader>te :tabedit 
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove
+map <leader>tm :tabmove 
 
 command! W w !sudo tee % > /dev/null
 
