@@ -135,7 +135,7 @@ let g:lightline = {
     \ 'separator': { 'left': '', 'right': '' },
     \ 'subseparator': { 'left': '', 'right': '' },
     \ 'active': {
-        \ 'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], ['ctrlpmark'] ],
+        \ 'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], ['ctrlpmark'], ['bufferline'] ],
         \ 'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
     \ },
     \ 'component_function': {
@@ -146,6 +146,7 @@ let g:lightline = {
         \ 'fileencoding': 'MyFileencoding',
         \ 'mode': 'MyMode',
         \ 'ctrlpmark': 'CtrlPMark',
+        \ 'bufferline': 'MyBufferline',
     \ },
     \ 'component_expand': {
         \ 'syntastic': 'SyntasticStatuslineFlag',
@@ -154,6 +155,14 @@ let g:lightline = {
         \ 'syntastic': 'error',
     \ },
 \ }
+
+function! MyBufferline()
+  call bufferline#refresh_status()
+  let b = g:bufferline_status_info.before
+  let c = g:bufferline_status_info.current
+  let a = g:bufferline_status_info.after
+  return  b == "" && a == "" ? '' : b . c . a
+endfunction
 
 function! MyModified()
   return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
@@ -263,8 +272,9 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'itchyny/lightline.vim'
-Plugin 'scrooloose/nerdtree'
 Plugin 'edkolev/promptline.vim'
+Plugin 'bling/vim-bufferline'
+Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'flazz/vim-colorschemes'
