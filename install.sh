@@ -20,4 +20,4 @@ ln -s $dir/screenrc ~/.screenrc
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall > /dev/null
 
-bash ./install-screen.sh
+bash $dir/install-screen.sh
