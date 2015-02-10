@@ -81,6 +81,8 @@ map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
 
+cabbrev path echo expand('%:p')
+
 command! W w !sudo tee % > /dev/null
 
 " Return to last edit position when opening files (You want this!)
