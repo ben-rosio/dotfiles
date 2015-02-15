@@ -85,6 +85,10 @@ cabbrev path echo expand('%:p')
 
 command! W w !sudo tee % > /dev/null
 
+cabbrev num set nu
+cabbrev num! set nu
+cabbrev rnum set relativenumber
+
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
