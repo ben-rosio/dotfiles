@@ -5,4 +5,4 @@
 	email = ben@ros.io
 	name = ben
 [push]
-    default = simple
+    default = current
