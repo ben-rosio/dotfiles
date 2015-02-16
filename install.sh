@@ -15,6 +15,7 @@ ln -s $dir/vimrc ~/.vimrc
 mkdir ~/.vagrant.d
 ln -s $dir/vagrant.d/Vagrantfile ~/.vagrant.d/Vagrantfile
 ln -s $dir/screenrc ~/.screenrc
+ln -s $dir/gitconfig ~/.gitconfig
 
 
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
