@@ -15,7 +15,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'Raimondi/delimitMate'
-Plugin 'takac/vim-hardtime'
+Plugin 'kbarrette/mediummode'
 
 " Language
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
