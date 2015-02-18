@@ -35,15 +35,15 @@ map ˙ <C-W>H
 map ¬ <C-W>L
 
 " Window movement
-map <leader>x :split 
-map <leader>s :vsplit 
+map <leader>x :split
+map <leader>s :vsplit
 
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
-map <leader>te :tabedit 
+map <leader>te :tabedit
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
+map <leader>tm :tabmove
 
 
 """"""""""""""""
