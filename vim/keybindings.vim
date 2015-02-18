@@ -59,7 +59,7 @@ nnoremap <CR> :noh<CR>
 " Spellcheck
 """"""""""""""""
 
-" Pressing ,ss will toggle and untoggle spell checking
+" Pressing <leader>ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
 " Shortcuts using <leader>
