@@ -21,6 +21,7 @@ fresh shell/functions/\*
 fresh config/Vagrantfile --file=~/.vagrant.d/Vagrantfile
 fresh shell/config/\*
 fresh shell/\*
+fresh twe4ked/dotfiles shell/functions/h.sh
 
 fresh config/\* --file
 
