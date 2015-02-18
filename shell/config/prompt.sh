@@ -28,7 +28,7 @@ then
 fi
 
 # add user@host:path
-export PS1="$PS1\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w"
+export PS1="$PS1\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W"
 
 # add git status if available
 export GIT_PS1_SHOWDIRTYSTATE=1
