@@ -72,4 +72,4 @@ map <leader>s? z=
 """"""""""""""""
 " Git
 """"""""""""""""
-map <leader>gs :Gstatue
+map <leader>gs :Gstatus<CR>
