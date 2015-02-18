@@ -73,3 +73,5 @@ map <leader>s? z=
 " Git
 """"""""""""""""
 map <leader>gs :Gstatus<CR>
+nnoremap <leader>gps :Dispatch! git push<CR>
+nnoremap <leader>gpl :Dispatch! git pull<CR>
