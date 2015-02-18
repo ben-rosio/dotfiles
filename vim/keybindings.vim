@@ -68,3 +68,8 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>sb zw
 map <leader>s? z=
+
+""""""""""""""""
+" Git
+""""""""""""""""
+map <leader>gs :Gstatue
