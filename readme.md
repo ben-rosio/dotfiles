@@ -3,9 +3,8 @@ Dotfiles
 
 Installation
 ------------
+Dotfiles managed by [fresh](http://freshshell.com).
 
 ```bash
-cd ~
-git clone https://github.com/ben-rosio/dotfiles
-./dotfiles/install.sh
+FRESH_LOCAL_SOURCE=ben-rosio/dotfiles bash -c "`curl -sL get.freshshell.com`"
 ```
