@@ -6,3 +6,5 @@
 	name = ben
 [push]
     default = current
+[mergetool]
+	keepBackup = true

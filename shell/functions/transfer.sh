@@ -1,9 +1,3 @@
-if [ -f /etc/bashrc ]; then
-    source /etc/bashrc
-fi
-
-alias tower=gittower
-
 # Transfer.sh
 transfer() { 
     if [ $# -eq 0 ]; then 
@@ -26,7 +20,4 @@ transfer() {
     cat $tmpfile; rm -f $tmpfile; 
 } 
 
-alias transfer=transfer
-
-# username:directory hostname#
-export PS1="\[\e[00;37m\]\h:\W \u\\$\[\e[0m\] "
+# alias transfer=transfer
