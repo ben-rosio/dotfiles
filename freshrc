@@ -19,11 +19,12 @@ fresh git/git contrib/completion/git-prompt.sh
 fresh shell/aliases/\*
 fresh shell/functions/\*
 fresh config/Vagrantfile --file=~/.vagrant.d/Vagrantfile
-fresh shell/config/\*
+#fresh shell/config/\*
 fresh shell/\*
 
 fresh twe4ked/dotfiles shell/functions/h.sh # h function - greps history
 fresh jasoncodes/dotfiles shell/config/ls.sh # adds colors to ls
+fresh jasoncodes/dotfiles shell/config/prompt.sh --filter="sed 's;\\w;\\W;g'" # Use jason prompt, but only show directory, not path
 
 fresh config/\* --file
 
