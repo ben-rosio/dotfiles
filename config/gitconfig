@@ -1,6 +1,6 @@
 [core]
     editor = vim
-    excludesfile = ~/dotfiles/gitignore
+    excludesfile = ~/.dotfiles/gitignore
 [user]
 	email = ben@ros.io
 	name = ben
