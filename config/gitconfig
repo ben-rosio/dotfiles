@@ -1,6 +1,8 @@
 [core]
     editor = vim
     excludesfile = ~/.dotfiles/gitignore
+[diff]
+    algorithm = patience
 [user]
 	email = ben@ros.io
 	name = ben
