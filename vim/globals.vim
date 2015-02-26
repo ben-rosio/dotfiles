@@ -11,6 +11,7 @@ set t_vb=
 set tm=500
 
 set history=700
+set hidden " Allow hidden buffers
 
 set number
 
