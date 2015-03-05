@@ -17,6 +17,13 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 map j gj
 map k gk
 
+"""""""""""""""
+" Buffers
+"""""""""""""""
+map bn :bn<CR>
+map bp :bp<CR>
+"cnoreabbrev wq w<bar>bd
+"cnoreabbrev q bd
 
 """"""""""""""""
 " Windows & Tabs
