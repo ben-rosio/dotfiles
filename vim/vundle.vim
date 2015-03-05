@@ -15,7 +15,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'Raimondi/delimitMate'
-Plugin 'kbarrette/mediummode'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
 
 " Language
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -29,5 +30,4 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-fugitive'
 
 " Colors
-Plugin 'scrooloose/syntastic'
 Plugin 'flazz/vim-colorschemes'
