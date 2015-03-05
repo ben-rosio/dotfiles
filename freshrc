@@ -26,7 +26,7 @@ fresh config/Vagrantfile --file=~/.vagrant.d/Vagrantfile
 fresh shell/\*
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    fresh macos/*.sh
+    fresh macos/\*.sh
 fi
 
 fresh twe4ked/dotfiles shell/functions/h.sh # h function - greps history
@@ -53,7 +53,7 @@ fresh-options
 
 init_vim() {
 	if type vim &>/dev/null && ! [ -d $HOME/.vim/bundle/vundle ]; then
-		vim || [ -d $HOME/.vim/bundle/vundle ]
+		vim || [ -d $HOME/.vim/bundle/vundle ] 2>/dev/null
 	fi
 }
 
