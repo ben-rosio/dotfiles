@@ -10,11 +10,7 @@
 
 fresh freshshell/fresh bin/fresh --bin
 
-echo "source ~/.fresh/build/shell.sh" >> ~/.bash_profile
-echo "source ~/.fresh/build/shell.sh" >> ~/.bashrc
-
-#fresh freshshell/fresh contrib/source-build.sh --file=~/.bash_profile
-#fresh freshshell/fresh contrib/source-build.sh --file=~/.bashrc
+fresh freshshell/fresh contrib/source-build.sh --file=~/.bashrc
 
 fresh git/git contrib/completion/git-completion.bash
 fresh git/git contrib/completion/git-prompt.sh
