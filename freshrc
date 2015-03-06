@@ -53,7 +53,7 @@ init_vim() {
 
 init_bashrc() {
     sourceLine="source ~/.fresh/build/shell.sh"
-    if [ "$(grep \"$sourceLine\" ~/.bashrc)" == "" ]; then
+    if [ "$(grep "$sourceLine" ~/.bashrc)" == "" ]; then
         echo "$sourceLine" >> ~/.bashrc
     fi
 }
