@@ -30,25 +30,25 @@ fresh jasoncodes/dotfiles shell/config/prompt.sh --filter="sed 's;\\\\w;\\\\W;g'
 fresh config/\* --file
 
 fresh-options --file=~/.vimrc --marker=\"
-	fresh vim/nocompatible.vim
-	fresh vim/leader.vim
-	fresh vim/hardtime.vim
+    fresh vim/nocompatible.vim
+    fresh vim/leader.vim
+    fresh vim/hardtime.vim
 
-	fresh twe4ked/dotfiles vim/vundle_before.vim
-	fresh vim/vundle.vim
-	fresh vim/plugin_config/\*.vim
-	fresh twe4ked/dotfiles vim/vundle_after.vim
+    fresh twe4ked/dotfiles vim/vundle_before.vim
+    fresh vim/vundle.vim
+    fresh vim/plugin_config/\*.vim
+    fresh twe4ked/dotfiles vim/vundle_after.vim
 
-	fresh vim/globals.vim
-	fresh vim/keybindings.vim
-	fresh vim/config/\*.vim
-	fresh vim/colorscheme.vim
+    fresh vim/globals.vim
+    fresh vim/keybindings.vim
+    fresh vim/config/\*.vim
+    fresh vim/colorscheme.vim
 fresh-options
 
 init_vim() {
-	if type vim &>/dev/null && ! [ -d $HOME/.vim/bundle/vundle ]; then
-		vim || [ -d $HOME/.vim/bundle/vundle ] 2>/dev/null
-	fi
+    if type vim &>/dev/null && ! [ -d $HOME/.vim/bundle/vundle ]; then
+        vim || [ -d $HOME/.vim/bundle/vundle ] 2>/dev/null
+    fi
 }
 
 init_bashrc() {
@@ -59,6 +59,6 @@ init_bashrc() {
 }
 
 fresh_after_build() {
-	init_vim
+    init_vim
     init_bashrc
 }
