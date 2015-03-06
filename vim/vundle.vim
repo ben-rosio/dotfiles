@@ -5,7 +5,7 @@ Plugin 'tpope/vim-dispatch'
 " Visual
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'bling/vim-bufferline'
-Plugin 'itchyny/lightline.vim'
+Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'edkolev/promptline.vim'
 
