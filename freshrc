@@ -49,7 +49,7 @@ fresh-options
 
 init_vim() {
     if type vim &>/dev/null && ! [ -d $HOME/.vim/bundle/vundle ]; then
-        vim || [ -d $HOME/.vim/bundle/vundle ] 2>/dev/null
+        vim +PluginInstall +qall 2> /dev/null
     fi
 }
 
