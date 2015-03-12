@@ -11,6 +11,8 @@
 fresh freshshell/fresh bin/fresh --bin
 
 fresh git/git contrib/completion/git-completion.bash
+fresh kura/vagrant-bash-completion etc/bash_completion.d/vagrant
+
 fresh git/git contrib/completion/git-prompt.sh
 
 fresh shell/aliases/\*
