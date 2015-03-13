@@ -15,8 +15,11 @@ Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'Raimondi/delimitMate'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
+
+if v:version >= 703
+    Plugin 'Valloric/YouCompleteMe'
+endif
 
 " Language
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
