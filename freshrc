@@ -15,12 +15,6 @@ fresh kura/vagrant-bash-completion etc/bash_completion.d/vagrant
 
 fresh git/git contrib/completion/git-prompt.sh
 
-fresh shell/aliases/\*
-fresh shell/functions/\*
-fresh config/Vagrantfile --file=~/.vagrant.d/Vagrantfile
-# fresh shell/config/\*
-fresh shell/\*
-
 fresh awesome/rc.lua --file=~/.config/awesome/rc.lua
 fresh awesome/scripts --file=~/.config/awesome/scripts/
 
@@ -33,6 +27,12 @@ fresh jasoncodes/dotfiles shell/config/ls.sh --filter="sed '/GREP_OPTIONS/d'" # 
 fresh jasoncodes/dotfiles shell/config/prompt.sh --filter="sed 's;\\\\w;\\\\W;g'" # Use jason prompt, but only show directory, not path
 
 fresh config/\* --file
+
+fresh shell/aliases/\*
+fresh shell/functions/\*
+fresh config/Vagrantfile --file=~/.vagrant.d/Vagrantfile
+fresh shell/config/\*
+fresh shell/\*
 
 fresh-options --file=~/.vimrc --marker=\"
     fresh vim/nocompatible.vim
