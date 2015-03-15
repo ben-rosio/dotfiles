@@ -20,6 +20,7 @@ fresh shell/functions/\*
 fresh config/Vagrantfile --file=~/.vagrant.d/Vagrantfile
 # fresh shell/config/\*
 fresh shell/\*
+fresh awesome/rc.lua --file=~/.config/awesome/rc.lua
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     fresh macos/\*.sh
