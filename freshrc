@@ -26,7 +26,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 fresh twe4ked/dotfiles shell/functions/h.sh # h function - greps history
-fresh jasoncodes/dotfiles shell/config/ls.sh # adds colors to ls
+fresh jasoncodes/dotfiles shell/config/ls.sh --filter="sed '/GREP_OPTIONS/d'" # adds colors to ls
 fresh jasoncodes/dotfiles shell/config/prompt.sh --filter="sed 's;\\\\w;\\\\W;g'" # Use jason prompt, but only show directory, not path
 
 fresh config/\* --file
