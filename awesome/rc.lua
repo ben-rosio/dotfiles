@@ -250,6 +250,28 @@ globalkeys = awful.util.table.join(
             end
         end),
 
+    -- Workspace manipulation
+    awful.key({ modkey, "Shift"   }, "Left",
+    function (c)
+        local curidx = awful.tag.getidx()
+        if curidx == 1 then
+            awful.client.movetotag(tags[client.focus.screen][#tags[client.focus.screen]])
+        else
+            awful.client.movetotag(tags[client.focus.screen][curidx - 1])
+        end
+        awful.tag.viewidx(-1)
+    end),
+    awful.key({ modkey, "Shift"   }, "Right",
+    function (c)
+        local curidx = awful.tag.getidx()
+        if curidx == #tags[client.focus.screen] then
+            awful.client.movetotag(tags[client.focus.screen][1])
+        else
+            awful.client.movetotag(tags[client.focus.screen][curidx + 1])
+        end
+        awful.tag.viewidx(1)
+    end),
+
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
