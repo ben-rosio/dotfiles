@@ -27,7 +27,6 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Navigation
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
 
 " Git
 Plugin 'tpope/vim-fugitive'
