@@ -356,6 +356,16 @@ for i = 1, 9 do
                              awful.tag.viewtoggle(tag)
                           end
                       end),
+            -- Toggle tag all screens.
+            awful.key({ modkey, "Mod1" }, key,
+                      function ()
+                          for screen = 1, screen.count() do
+                              local tag = awful.tag.gettags(screen)[i]
+                              if tag then
+                                  awful.tag.viewtoggle(tag)
+                              end
+                          end
+                      end),
             -- Move client to tag.
             awful.key({ modkey, "Shift" }, key,
                       function ()
