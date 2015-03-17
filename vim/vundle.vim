@@ -23,6 +23,7 @@ endif
 
 " Language
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'marijnh/tern_for_vim'
 
 " Navigation
 Plugin 'kien/ctrlp.vim'
