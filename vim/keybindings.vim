@@ -20,8 +20,9 @@ map k gk
 """""""""""""""
 " Buffers
 """""""""""""""
-map bn :bn<CR>
-map bp :bp<CR>
+map <leader>bn :bn<CR>
+map <leader>bp :bp<CR>
+map <leader>bd :Bclose<CR>
 "cnoreabbrev wq w<bar>bd
 "cnoreabbrev q bd
 

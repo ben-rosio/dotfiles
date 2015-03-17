@@ -35,6 +35,7 @@ fresh shell/config/\*
 fresh shell/\*
 
 fresh-options --file=~/.vimrc --marker=\"
+    fresh vim/functions/\*.vim
     fresh vim/nocompatible.vim
     fresh vim/leader.vim
     fresh vim/hardtime.vim
