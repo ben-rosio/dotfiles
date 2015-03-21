@@ -29,6 +29,8 @@ if v:version <= 703
     Plugin 'JulesWang/css.vim' " only necessary if your Vim version < 7.4
 endif
 Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'xsbeats/vim-blade'
+Plugin 'othree/html5.vim'
 
 " Navigation
 Plugin 'kien/ctrlp.vim'
