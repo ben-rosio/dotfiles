@@ -25,6 +25,8 @@ endif
 " Language
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'marijnh/tern_for_vim'
+Plugin 'JulesWang/css.vim' " only necessary if your Vim version < 7.4
+Plugin 'cakebaker/scss-syntax.vim'
 
 " Navigation
 Plugin 'kien/ctrlp.vim'
