@@ -68,14 +68,14 @@ nnoremap <CR> :noh<CR>
 """"""""""""""""
 
 " Pressing <leader>ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
+map <leader>sc :setlocal spell!<cr>
 
 " Shortcuts using <leader>
 map <leader>sn ]s
 map <leader>sp [s
 map <leader>sa zg
 map <leader>sb zw
-map <leader>s? z=
+map <leader>ss z=
 
 """"""""""""""""
 " Git
