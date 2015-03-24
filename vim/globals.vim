@@ -22,6 +22,7 @@ set modelines=1
 " Allow backspace to remove lines.
 set backspace=indent,eol,start
 
+au BufRead,BufNewFile *.md set filetype=markdown
 
 """""""""""""""
 " Syntax
