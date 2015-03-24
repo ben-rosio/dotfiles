@@ -43,8 +43,8 @@ map ˙ <C-W>H
 map ¬ <C-W>L
 
 " Window movement
-map <leader>x :split
-map <leader>s :vsplit
+map <leader>X :split
+map <leader>S :vsplit
 
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
