@@ -12,6 +12,12 @@ FRESH_LOCAL_SOURCE=ben-rosio/dotfiles bash -c "`curl -sL get.freshshell.com`"
 Post Installation
 -----------------
 ```bash
-cd ~/.vim/bundle/YouCompleteMe/install.sh
-cd ~/.vim/bundle/tern_for_vim/ && npm install
+bash ~/.vim/bundle/YouCompleteMe/install.sh
+
+pushd ~/.vim/bundle/tern_for_vim/
+npm install
+popd
+
+npm install -g instant-markdown-d
+yum install -y xdg-utils
 ```

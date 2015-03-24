@@ -8,6 +8,7 @@ Plugin 'bling/vim-bufferline'
 Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'edkolev/promptline.vim'
+Plugin 'suan/vim-instant-markdown'
 
 " Editing
 Plugin 'scrooloose/nerdcommenter'
