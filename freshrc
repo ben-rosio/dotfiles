@@ -28,6 +28,7 @@ fresh jasoncodes/dotfiles shell/config/prompt.sh --filter="sed 's;\\\\w;\\\\W;g'
 
 fresh config/\* --file
 
+fresh shell/bashrc
 fresh shell/aliases/\*
 fresh shell/functions/\*
 fresh config/Vagrantfile --file=~/.vagrant.d/Vagrantfile
@@ -57,14 +58,6 @@ init_vim() {
     fi
 }
 
-init_bashrc() {
-    sourceLine="source ~/.fresh/build/shell.sh"
-    if [ "$(grep "$sourceLine" ~/.bashrc)" == "" ]; then
-        echo "$sourceLine" >> ~/.bashrc
-    fi
-}
-
 fresh_after_build() {
     init_vim
-    init_bashrc
 }
