@@ -1,7 +1,3 @@
-# .bashrc
-
-source ~/.fresh/build/shell.sh
-
 # Source global definitions
 if [ -f /etc/bashrc ]; then
         . /etc/bashrc
