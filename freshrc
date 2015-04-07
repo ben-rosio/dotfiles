@@ -13,13 +13,16 @@ fresh freshshell/fresh bin/fresh --bin
 fresh freshshell/fresh contrib/source-build.sh --file=~/.bash_profile
 fresh freshshell/fresh contrib/source-build.sh --file=~/.bashrc
 
+fresh awesome/rc.lua --file=~/.config/awesome/rc.lua
+fresh awesome/scripts --file=~/.config/awesome/scripts/
+
+# .bashrc
+fresh shell/globalrc.sh
+
 fresh git/git contrib/completion/git-completion.bash
 fresh kura/vagrant-bash-completion etc/bash_completion.d/vagrant
 
 fresh git/git contrib/completion/git-prompt.sh
-
-fresh awesome/rc.lua --file=~/.config/awesome/rc.lua
-fresh awesome/scripts --file=~/.config/awesome/scripts/
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     fresh macos/\*.sh
@@ -29,14 +32,16 @@ fresh twe4ked/dotfiles shell/functions/h.sh # h function - greps history
 fresh jasoncodes/dotfiles shell/config/ls.sh --filter="sed '/GREP_OPTIONS/d'" # adds colors to ls
 fresh jasoncodes/dotfiles shell/config/prompt.sh --filter="sed 's;\\\\w;\\\\W;g'" # Use jason prompt, but only show directory, not path
 
+fresh config/Vagrantfile --file=~/.vagrant.d/Vagrantfile
 fresh config/\* --file
 
 fresh shell/aliases/\*
 fresh shell/functions/\*
-fresh config/Vagrantfile --file=~/.vagrant.d/Vagrantfile
 fresh shell/config/\*
-fresh shell/\*
 
+fresh shell/localrc.sh
+
+# .vimrc
 fresh-options --file=~/.vimrc --marker=\"
     fresh vim/functions/\*.vim
     fresh vim/nocompatible.vim
