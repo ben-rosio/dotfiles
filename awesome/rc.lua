@@ -16,7 +16,7 @@ local menubar = require("menubar")
 require("awful.autofocus")
 require("error_handling")
 
-beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 
 terminal = "terminator"
 editor = os.getenv("EDITOR") or "vim"
@@ -55,7 +55,7 @@ end
 
 require("scripts/volume")
 
-require("menubar")
+require("my_menubar")
 
 require("input_bindings")
 

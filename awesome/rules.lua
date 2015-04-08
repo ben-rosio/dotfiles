@@ -1,3 +1,9 @@
+local awful = require("awful")
+awful.rules = require("awful.rules")
+
+-- Theme handling library
+local beautiful = require("beautiful")
+
 -- {{{ Rules
 -- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = {

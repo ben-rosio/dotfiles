@@ -26,6 +26,8 @@ fresh kura/vagrant-bash-completion etc/bash_completion.d/vagrant
 
 fresh git/git contrib/completion/git-prompt.sh
 
+fresh awesome --file=~/.config/awesome/
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
     fresh macos/\*.sh
 fi
