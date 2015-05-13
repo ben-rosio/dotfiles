@@ -15,25 +15,32 @@ if [[ "$BOX" == "" ]]; then
     exit 1
 fi
 
-while true; do
+function query_box_status()
+{
     BOX_STATUS=$(vagrant status "$BOX" 2>/dev/null | grep "$BOX" | awk '{print $2}')
 
     if [[ "$?" != "0" ]]; then
         echo 'Failed to query vagrant status.'
         exit 1
     fi
+}
 
-    echo "$BOX is $BOX_STATUS"
+while true; do
+    query_box_status
 
     while [[ "$BOX_STATUS" != "running" ]]; do
-        sleep $RECONNECT_PAUSE;
+        echo "$BOX is $BOX_STATUS"
+
+        sleep $RECONNECT_PAUSE
+
+        query_box_status
     done;
 
     vagrant ssh "$BOX"
 
     SSH_EXIT_CODE=$?
 
-    if [[ "$LAST_EXIT_CODE" == "0" ]]; then
+    if [[ "$SSH_EXIT_CODE" == "0" ]]; then
         break;
     fi;
 done;
