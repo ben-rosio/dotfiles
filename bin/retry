@@ -1,0 +1,119 @@
+#!/bin/bash
+
+help=$(cat <<'EOF'
+retry [tmrab] [command]
+  Retries the given command with degregation.
+  -t - Initial wait time. Default 3.
+  -m - Multipier to wait time as failures occur. Default 1.2.
+  -r - Number of times to retry. Default 3.
+  -a - Minimum timeout period. Default none.
+  -b - Maximum timeout period. Default none.
+
+Example:
+
+# Longer timeout between tries.
+retry -t 5 -m '1.5' -- some-command
+
+# Retry a command doubling the wait with a maximum of a 5 second wait.
+retry -t 1 -m '2' -b 5 -- some-command
+
+# Retry a command indefinitely every 3 seconds.
+retry -t 3 -m 1 -r 0 -- some-command
+EOF
+)
+
+# Feed in arguments
+while [[ $# > 1 ]]; do
+key="$1"
+
+case $key in
+    -t)
+        INITIAL_TIME="$2"
+        shift
+        ;;
+    -m)
+        MULTIPLIER="$2"
+        shift
+        ;;
+    -r)
+        RETRY_COUNT="$2"
+        shift
+        ;;
+    -a)
+        MINIMUM="$2"
+        shift
+        ;;
+    -b)
+        MAXIMUM="$2"
+        shift
+        ;;
+    --)
+        shift
+        break
+        ;;
+    *)
+        echo "Invalid argument given."
+        echo "$help"
+        exit 1
+        ;;
+esac
+shift
+done
+
+COMMAND=$@
+shift
+
+# Verify
+if [ "$INITIAL_TIME" == "" ]; then
+    INITIAL_TIME=3;
+fi
+
+if [ "$MULTIPLIER" == "" ]; then
+    MULTIPLIER=1.2;
+fi
+
+if [ "$RETRY_COUNT" == "" ]; then
+    RETRY_COUNT=3;
+fi
+
+if [ "$COMMAND" == "" ]; then
+    echo "Command argument is required."
+    echo "$help"
+    exit 1
+fi
+
+# Perform
+
+
+COUNTER=1
+SUCCESS=false
+EXIT_CODE=0
+
+while (( RETRY_COUNT == 0 || COUNTER <= RETRY_COUNT )); do
+    bash -c "$COMMAND"
+    EXIT_CODE=$?
+
+    if [[ "$EXIT_CODE" == "0" ]]; then
+        SUCCESS=true
+        break
+    fi
+
+    TIMEOUT=$(bc <<< "$INITIAL_TIME * $MULTIPLIER * $COUNTER")
+
+    if [[ $MINIMUM != "" && $(bc <<< "$TIMEOUT < $MINIMUM") == 1 ]]; then
+        TIMEOUT=$MINIMUM
+    elif [[ $MAXIMUM != "" && $(bc <<< "$TIMEOUT > $MAXIMUM") == 1 ]]; then
+        TIMEOUT=$MAXIMUM
+    fi
+
+    echo "Failed... Retrying in $TIMEOUT seconds"
+
+    sleep $TIMEOUT
+
+    COUNTER=$(($COUNTER + 1))
+done
+
+if [[ ! $SUCCESS ]]; then
+    echo "Failed to run command $RETRY_COUNT times. Stopping."
+    exit $EXIT_CODE
+fi

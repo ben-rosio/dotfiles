@@ -16,6 +16,8 @@ fresh freshshell/fresh contrib/source-build.sh --file=~/.bashrc
 fresh awesome/rc.lua --file=~/.config/awesome/rc.lua
 fresh awesome/scripts --file=~/.config/awesome/scripts/
 
+fresh bin/\* --bin
+
 # .bashrc
 fresh shell/globalrc.sh
 
