@@ -1,0 +1,39 @@
+#!/bin/bash
+
+help=$(cat <<'EOF'
+vagrant-reconnect [boxname]
+
+Re-SSH into a vagrant box if it was reset in some way.
+EOF
+)
+
+BOX=$1
+RECONNECT_PAUSE=3
+
+if [[ "$BOX" == "" ]]; then
+    echo 'A Box must be specified.'
+    exit 1
+fi
+
+while true; do
+    BOX_STATUS=$(vagrant status "$BOX" 2>/dev/null | grep "$BOX" | awk '{print $2}')
+
+    if [[ "$?" != "0" ]]; then
+        echo 'Failed to query vagrant status.'
+        exit 1
+    fi
+
+    echo "$BOX is $BOX_STATUS"
+
+    while [[ "$BOX_STATUS" != "running" ]]; do
+        sleep $RECONNECT_PAUSE;
+    done;
+
+    vagrant ssh "$BOX"
+
+    SSH_EXIT_CODE=$?
+
+    if [[ "$LAST_EXIT_CODE" == "0" ]]; then
+        break;
+    fi;
+done;
