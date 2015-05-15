@@ -2,8 +2,10 @@
 Plugin 'L9'
 Plugin 'tpope/vim-dispatch'
 
+" Faux orgmode
 Plugin 'vimwiki/vimwiki'
 Plugin 'farseer90718/vim-taskwarrior'
+Plugin 'tbabej/taskwiki'
 
 " Visual
 Plugin 'nathanaelkane/vim-indent-guides'

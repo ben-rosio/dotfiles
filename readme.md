@@ -20,4 +20,6 @@ popd
 
 npm install -g instant-markdown-d
 yum install -y xdg-utils
+
+pip install https://github.com/tbabej/tasklib/archive/develop.zip
 ```
