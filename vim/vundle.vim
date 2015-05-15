@@ -2,6 +2,9 @@
 Plugin 'L9'
 Plugin 'tpope/vim-dispatch'
 
+Plugin 'vimwiki/vimwiki'
+Plugin 'farseer90718/vim-taskwarrior'
+
 " Visual
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'bling/vim-bufferline'
