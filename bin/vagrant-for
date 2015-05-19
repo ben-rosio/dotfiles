@@ -1,13 +1,14 @@
 #!/bin/bash
 
 help=$(cat <<'EOF'
-vagrant-for [g] [command]
+vagrant-for [g] [w SECONDS] [command]
 
 For each vagrant guest machine run a given command.
 The variable box is availabe, and refers to the name of the current box.
 
 -g - Run the command on the guest machine.
 -q - Run quietly.
+-w - Wait between running each command. Default to 1 second.
 
 Example:
 vagrant-for 'echo "$box"'
@@ -17,6 +18,7 @@ EOF
 
 RUN_ON="host"
 QUIET=false
+WAIT=1
 
 while [[ $# > 1 ]]; do
 key="$1"
@@ -28,11 +30,15 @@ case $key in
     -q)
         QUIET=true
         ;;
+    -w)
+        WAIT="$2"
+        shift
+        ;;
     --)
         shift
         break
         ;;
-    *)
+    *|-h)
         echo "Invalid argument given"
         echo "$help"
         exit 1
@@ -49,6 +55,13 @@ function echo_if()
 }
 
 COMMAND="$@"
+
+if [[ "$COMMAND" == "" ]]; then
+    echo "A command is required."
+    echo "$help"
+    exit 1
+fi
+
 BOXES=$(vagrant status | grep running | awk '{print $1}' | tr "\n" ' ' | sed 's/\s*$//')
 
 echo_if "Running $COMMAND on $BOXES"
@@ -59,4 +72,8 @@ for box in $BOXES; do
     elif [[ "$RUN_ON" == "guest" ]]; then
         vagrant ssh "$box" -c "$(echo $COMMAND | sed "s/\$box/$box/g")"
     fi;
+
+    if [[ $WAIT -le 0 ]]; then
+        sleep "$WAIT";
+    fi
 done;
