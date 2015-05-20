@@ -1,12 +1,27 @@
 [core]
     editor = vim
     excludesfile = ~/.dotfiles/gitignore
+
 [diff]
     algorithm = patience
+    tool = Kaleidoscope
+
+[merge]
+    tool = Kaleidoscope
+
 [user]
 	email = ben@ros.io
 	name = ben
+
 [push]
     default = current
+
 [mergetool]
 	keepBackup = true
+
+[difftool "Kaleidoscope"]
+    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+[mergetool "Kaleidoscope"]
+    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+    trustExitCode = true
