@@ -14,6 +14,7 @@ Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'edkolev/promptline.vim'
 Plugin 'suan/vim-instant-markdown'
+Plugin 'aklt/plantuml-syntax'
 
 " Editing
 Plugin 'scrooloose/nerdcommenter'
