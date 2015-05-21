@@ -22,7 +22,11 @@ set modelines=1
 " Allow backspace to remove lines.
 set backspace=indent,eol,start
 
+" Markdown
 au BufRead,BufNewFile *.md set filetype=markdown
+
+" Save on focus loss
+au FocusLost * silent! wa
 
 """""""""""""""
 " Syntax
