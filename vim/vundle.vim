@@ -23,6 +23,7 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'sjl/gundo.vim'
 
 if v:version >= 703
     Plugin 'Valloric/YouCompleteMe'
