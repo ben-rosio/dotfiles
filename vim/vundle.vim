@@ -25,6 +25,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'sjl/gundo.vim'
+Plugin 'chrisbra/NrrwRgn'
 
 if v:version >= 703
     Plugin 'Valloric/YouCompleteMe'
