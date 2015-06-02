@@ -9,7 +9,6 @@ Plugin 'tbabej/taskwiki'
 
 " Visual
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'bling/vim-bufferline'
 Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'edkolev/promptline.vim'
