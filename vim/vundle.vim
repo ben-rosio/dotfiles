@@ -15,6 +15,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'edkolev/promptline.vim'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'aklt/plantuml-syntax'
+Plugin 'fholgado/minibufexpl.vim'
 
 " Editing
 Plugin 'scrooloose/nerdcommenter'
