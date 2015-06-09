@@ -1,0 +1,68 @@
+#!/bin/bash
+REGION_CACHE_FILE='/tmp/ec2-regions'
+
+# Get file to add the EC2_URL export to
+if [ -e ~/.bashrc.local ]; then
+    exportFile='~/.bashrc.local'
+elif [ -e ~/.bashrc ]; then
+    exportFile='~/.bashrc'
+fi
+
+if [ -z "$exportFile" ]; then
+    echo 'Failed to find export file.'
+    exit 1
+fi
+
+eval exportFile=$exportFile # Expand tilde
+
+
+# Cache ec2 regions for faster results
+if [ -e "$REGION_CACHE_FILE" ]; then
+    REGIONS=$(cat "$REGION_CACHE_FILE");
+else
+    REGIONS=$(ec2-describe-regions);
+    echo "$REGIONS" > $REGION_CACHE_FILE;
+fi;
+
+REGION_NAMES=($(echo "$REGIONS" | awk '{print $2}'))
+REGION_URLS=($(echo "$REGIONS" | awk '{print $3}'))
+
+
+# Get current region
+incrementer=0
+for regionUrl in "${REGION_URLS[@]}"; do
+    # echo "$regionUrl == $EC2_URL"
+    if [ "$regionUrl" == "$EC2_URL" ]; then
+        currentRegion="${REGION_NAMES[$incrementer]}"
+        break
+    fi
+done;
+
+# Print current region
+if [ -z "$currentRegion" ]; then
+    echo 'No region selected.'
+else
+    echo "Current region: $currentRegion"
+fi
+
+# Print all regions
+incrementer=0
+for region in "${REGION_NAMES[@]}"; do
+    echo "$incrementer: $region"
+    incrementer=$((incrementer+1))
+done;
+
+
+# Ask for new region
+read -p 'New Region: ' selectedRegionNumber
+
+selectedRegion=${REGION_URLS[$selectedRegionNumber]}
+
+echo "Setting url to: $selectedRegion"
+
+
+# Set url in bashrc or bashrc.local
+sed -i '' '/EC2_URL=/d' "$exportFile"
+echo "export EC2_URL=\"$selectedRegion\"" >> "$exportFile"
+
+echo "source \"$exportFile\""
