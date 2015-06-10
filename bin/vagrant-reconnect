@@ -15,9 +15,23 @@ if [[ "$BOX" == "" ]]; then
     exit 1
 fi
 
+# Find .vagrant directory
+VAGRANT_DIRECTORY=$(pwd)
+
+while [[ "$VAGRANT_DIRECTORY" != "" ]]; do
+    if [[ -d "$VAGRANT_DIRECTORY/.vagrant" ]]; then
+        break;
+    fi;
+
+    VAGRANT_DIRECTORY=$(echo $VAGRANT_DIRECTORY | sed 's,/[^/]*$,,g')
+done;
+
+VAGRANT_DIRECTORY="$VAGRANT_DIRECTORY/.vagrant"
+
 function query_box_status()
 {
-    BOX_STATUS=$(vagrant status "$BOX" 2>/dev/null | grep "$BOX" | awk '{print $2}')
+    BOX_ID="$(< $VAGRANT_DIRECTORY/machines/master/virtualbox/id)"
+    BOX_STATUS=$(VBoxManage showvminfo "$BOX_ID" | grep 'State' | sed 's/State: *\(.*\) (.*$/\1/')
 
     if [[ "$?" != "0" ]]; then
         echo 'Failed to query vagrant status.'
