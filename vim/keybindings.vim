@@ -1,4 +1,4 @@
-cabbrev path echo expand('%:p')
+cabbrev path expand('%:p')
 
 command! W w !sudo tee % > /dev/null
 
