@@ -68,6 +68,8 @@ if [[ "$CLEAN_DOTFILES" == "1" ]]; then
 
   echo 'cleaning dotfiles'
   rm -rf ~/.dotfiles ~/.fresh
-  find ~ -type l -maxdepth 1 -exec test -e {} \; -delete
   rm -rf ~/.config/awesome
+  find ~ -type l -maxdepth 1 -exec test -e {} \; -delete
+  find ~/bin -type l -maxdepth 1 -exec test -e {} \; -delete
+  rm -rf ~/.vim
 fi
