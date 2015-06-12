@@ -1,0 +1,73 @@
+#!/bin/bash
+
+help=$(cat <<'EOF'
+clean [] [command]
+  Cleans up stuff.
+  -d - Delete dotfiles.
+  -q - Do not prompt for comfirmation.
+  -a - Clean up all.
+
+Example:
+
+clean -d
+EOF
+)
+
+MESSAGES=()
+CLEAN_DOTFILES=0
+QUIET=0
+
+if [[ "$#" == '0' ]]; then
+  echo 'No arguments given.'
+  echo "$help"
+  exit 1
+fi
+
+# Feed in arguments
+while [[ $# > 0 ]]; do
+key="$1"
+
+case $key in
+    -d|-a)
+        CLEAN_DOTFILES=1
+        MESSAGES+=("remove dotfiles")
+        ;;
+    -q)
+        QUIET=1
+        ;;
+    *)
+        echo "Invalid argument given."
+        echo "$help"
+        exit 1
+        ;;
+esac
+shift
+done
+
+
+# Confirm
+if [[ "$QUIET" == "0" ]]; then
+  echo -n "Are you sure you want to "
+  printf '%s' "${MESSAGES[@]}"
+  echo -n "? [n] "
+  read confirmation
+
+  if [[ "$confirmation" != "y" && "$comfirmation" != "Y" ]]; then
+    echo "User aborted"
+    exit 1
+  fi
+fi
+
+# Perform
+
+if [[ "$CLEAN_DOTFILES" == "1" ]]; then
+  if [[ ! -z "$(git log --pretty=oneline @{u}..)" || ! -z "$(git status -s)" ]]; then
+    echo "Uncommitted dotfile changes, aborting"
+    exit 2
+  fi
+
+  echo 'cleaning dotfiles'
+  rm -rf ~/.dotfiles ~/.fresh
+  find ~ -type l -maxdepth 1 -exec test -e {} \; -delete
+  rm -rf ~/.config/awesome
+fi
