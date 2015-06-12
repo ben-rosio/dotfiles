@@ -30,7 +30,7 @@ VAGRANT_DIRECTORY="$VAGRANT_DIRECTORY/.vagrant"
 
 function query_box_status()
 {
-    BOX_ID="$(< $VAGRANT_DIRECTORY/machines/master/virtualbox/id 2>/dev/null)"
+    BOX_ID="$(cat $VAGRANT_DIRECTORY/machines/master/virtualbox/id 2>/dev/null)"
 
     if [ -z "$BOX_ID" -o "$?" != "0" ]; then
         BOX_STATUS="not created"
