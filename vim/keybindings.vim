@@ -1,3 +1,5 @@
+imap kj <Esc>
+
 cabbrev path expand('%:p')
 
 command! W w !sudo tee % > /dev/null
