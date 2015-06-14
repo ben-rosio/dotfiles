@@ -33,7 +33,7 @@ fresh twe4ked/dotfiles shell/functions/h.sh # h function - greps history
 fresh jasoncodes/dotfiles shell/config/ls.sh --filter="sed '/GREP_OPTIONS/d'" # adds colors to ls
 fresh jasoncodes/dotfiles shell/config/prompt.sh --filter="sed 's;\\\\w;\\\\W;g'" # Use jason prompt, but only show directory, not path
 
-fresh config/Vagrantfile --file=~/.vagrant.d/Vagrantfile
+fresh config/Vagrantfile --file=$HOME/.vagrant.d/Vagrantfile
 fresh config/\* --file
 
 fresh shell/aliases/\*
@@ -60,10 +60,14 @@ fresh-options --file=~/.vimrc --marker=\"
     fresh vim/colorscheme.vim
 fresh-options
 
+echo 'new customwiki'
+fresh vim/extras/customwiki2html.sh --file=$HOME/.vim/bundle/vimwiki/autoload/vimwiki/customwiki2html.sh
+
 init_vim() {
     if which vim &> /dev/null && ! [ -d $HOME/.vim/bundle/vundle ]; then
         vim || [ -d $HOME/.vim/bundle/vundle ]
     fi
+    chmod +x $HOME/.vim/bundle/vimwiki/autoload/vimwiki/customwiki2html.sh
 }
 
 fresh_after_build() {
