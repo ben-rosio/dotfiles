@@ -14,7 +14,10 @@ Post Installation
 
 ```bash
 # configure syntax linting/completion
-bash ~/.vim/bundle/YouCompleteMe/install.sh
+pushd ~/.vim/bundle/YouCompleteMe
+git submodule update --init --recursive
+./install.sh
+popd
 
 # Markdown preview support
 pushd ~/.vim/bundle/tern_for_vim/
