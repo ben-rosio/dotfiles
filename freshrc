@@ -60,14 +60,14 @@ fresh-options --file=~/.vimrc --marker=\"
     fresh vim/colorscheme.vim
 fresh-options
 
-echo 'new customwiki'
-fresh vim/extras/customwiki2html.sh --file=$HOME/.vim/bundle/vimwiki/autoload/vimwiki/customwiki2html.sh
-
 init_vim() {
     if which vim &> /dev/null && ! [ -d $HOME/.vim/bundle/vundle ]; then
         vim || [ -d $HOME/.vim/bundle/vundle ]
     fi
+
+    cp -f $HOME/.dotfiles/vim/extras/customwiki2html.sh $HOME/.vim/bundle/vimwiki/autoload/vimwiki/customwiki2html.sh
     chmod +x $HOME/.vim/bundle/vimwiki/autoload/vimwiki/customwiki2html.sh
+    mkdir $HOME/.vim/undodir
 }
 
 fresh_after_build() {
