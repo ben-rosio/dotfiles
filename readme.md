@@ -33,7 +33,7 @@ yum install -y xdg-utils
 pip install https://github.com/tbabej/tasklib/archive/develop.zip
 
 # Mac OS tmux fix
-brew install 'reattach-to-user-namespace
+brew install 'reattach-to-user-namespace'
 ```
 
 Extras
