@@ -35,3 +35,12 @@ pip install https://github.com/tbabej/tasklib/archive/develop.zip
 # Mac OS tmux fix
 brew install 'reattach-to-user-namespace
 ```
+
+Extras
+------
+
+### Make Terminal start tmux session
+```sh
+# Use as command to start new bash environment in terminal preferences:
+/usr/bin/env tmux new-session
+```
