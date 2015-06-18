@@ -1,6 +1,7 @@
 " Misc
 Plugin 'L9'
 Plugin 'tpope/vim-dispatch'
+Plugin 'tmux-plugins/vim-tmux-focus-events'
 
 " Faux orgmode
 Plugin 'vimwiki/vimwiki'
