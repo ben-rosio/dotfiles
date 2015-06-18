@@ -28,6 +28,9 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " Save on focus loss
 au FocusLost * silent! wa
 
+" Refresh on focus gain
+au FocusGained * :redraw!
+
 """""""""""""""
 " Syntax
 """""""""""""""
