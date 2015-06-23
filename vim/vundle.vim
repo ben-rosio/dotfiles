@@ -42,6 +42,7 @@ endif
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'xsbeats/vim-blade'
 Plugin 'othree/html5.vim'
+Plugin 'StanAngeloff/php.vim.git'
 
 " Navigation
 Plugin 'kien/ctrlp.vim'
