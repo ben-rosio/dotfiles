@@ -67,7 +67,8 @@ init_vim() {
 
     cp -f $HOME/.dotfiles/vim/extras/customwiki2html.sh $HOME/.vim/bundle/vimwiki/autoload/vimwiki/customwiki2html.sh
     chmod +x $HOME/.vim/bundle/vimwiki/autoload/vimwiki/customwiki2html.sh
-    mkdir $HOME/.vim/undodir
+
+    [[ -d "$HOME/.vim/undodir" ]] || mkdir $HOME/.vim/undodir
 }
 
 fresh_after_build() {
