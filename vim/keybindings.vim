@@ -1,15 +1,11 @@
-imap kj <Esc>
+inoremap kj <Esc>
 
-cabbrev path expand('%:p')
+command! Path echo expand('%:p')
 
 command! W w !sudo tee % > /dev/null
 
-cabbrev num set nu
-cabbrev num! set nu
-cabbrev rnum set relativenumber
-
 " Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+noremap <Leader>mm mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 """"""""""""""""
 " Movement
@@ -22,11 +18,10 @@ map k gk
 """""""""""""""
 " Buffers
 """""""""""""""
-map <leader>bn :bn<CR>
-map <leader>bp :bp<CR>
-map <leader>bd :Bclose<CR>
-"cnoreabbrev wq w<bar>bd
-"cnoreabbrev q bd
+noremap <leader>bn :bn<CR>
+noremap <leader>bp :bp<CR>
+noremap <leader>bd :Bclose<CR>
+noremap <leader>bdf :Bclose!<CR>
 
 """"""""""""""""
 " Windows & Tabs
