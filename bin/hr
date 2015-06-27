@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+LINES=${1-1}
+
+for i in `seq $(echo "$(tput cols)*$LINES" | bc)`; do
+    echo -ne "\xE2\x96\x88";
+done;
