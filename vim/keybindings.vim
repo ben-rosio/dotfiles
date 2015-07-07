@@ -12,8 +12,8 @@ noremap <Leader>mm mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 """"""""""""""""
 
 " Treate long lines as break lines
-map j gj
-map k gk
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
 
 """""""""""""""
 " Buffers
