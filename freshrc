@@ -48,6 +48,7 @@ fresh-options --file=~/.vimrc --marker=\"
     fresh vim/nocompatible.vim
     fresh vim/leader.vim
     fresh vim/hardtime.vim
+    fresh vim/make.vim
 
     fresh twe4ked/dotfiles vim/vundle_before.vim
     fresh vim/vundle.vim
