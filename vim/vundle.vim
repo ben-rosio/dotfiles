@@ -28,6 +28,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'chrisbra/NrrwRgn'
 Plugin 'tpope/vim-sleuth.git'
 Plugin 'tpope/vim-abolish'
+Plugin 'easymotion/vim-easymotion'
 
 if v:version >= 703
     Plugin 'Valloric/YouCompleteMe'
