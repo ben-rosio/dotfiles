@@ -42,6 +42,9 @@ fresh shell/config/\*
 
 fresh shell/localrc.sh
 
+# Taskwarrior
+fresh ./task-warrior/hooks/on-exit.0 --file=$HOME/.task/hooks/on-exit.0
+
 # .vimrc
 fresh-options --file=~/.vimrc --marker=\"
     fresh vim/functions/\*.vim
