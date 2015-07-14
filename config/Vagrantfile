@@ -1,4 +1,4 @@
-installDotfiles = (ENV['DOTFILES'] == nil || ENV['DOTFILES'].downcase == 'true')
+installDotfiles = (! ENV['DOTFILES'].nil? && ENV['DOTFILES'].downcase == 'true')
 
 Vagrant.configure('2') do |config|
     config.vm.provider :aws do |aws, override|
