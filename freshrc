@@ -43,9 +43,11 @@ fresh shell/config/\*
 fresh shell/localrc.sh
 
 # Taskwarrior
-fresh ./task-warrior/hooks/on-modify.blocks-attr.py --file=$HOME/.task/hooks/on-modify.blocks-attr.py
-if [[ ! -e "$HOME/.task/hooks/on-add.blocks-attr.py" ]]; then ln -s $HOME/.task/hooks/on-modify.blocks-attr.py $HOME/.task/hooks/on-add.blocks-attr.py; fi;
-if [[ ! -e "$HOME/.task/hooks/on-update.blocks-attr.py" ]]; then ln -s $HOME/.task/hooks/on-modify.blocks-attr.py $HOME/.task/hooks/on-update.blocks-attr.py; fi;
+ln -sf $FRESH_LOCAL/task-warrior/taskrc $HOME/.taskrc
+
+ln -sf $FRESH_LOCAL/task-warrior/hooks/on-modify.blocks-attr.py $HOME/.task/hooks/on-modify.blocks-attr.py
+ln -sf $FRESH_LOCAL/task-warrior/hooks/on-modify.blocks-attr.py $HOME/.task/hooks/on-add.blocks-attr.py
+ln -sf $FRESH_LOCAL/task-warrior/hooks/on-modify.blocks-attr.py $HOME/.task/hooks/on-launch.blocks-attr.py
 
 # .vimrc
 fresh-options --file=~/.vimrc --marker=\"
