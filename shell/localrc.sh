@@ -1,3 +1,3 @@
-if [ -f ~/.bashrc.local ]; then
-	source ~/.bashrc.local;
+if [ -f "$HOME/.bashrc.local" ]; then
+	. "$HOME/.bashrc.local";
 fi
