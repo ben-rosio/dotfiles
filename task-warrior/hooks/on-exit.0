@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-if [[ ! -e '/tmp/.recurse-block' ]]; then
-    touch /tmp/.recurse-block
-
-    task sync
-
-    rm -f /tmp/.recurse-block
-fi

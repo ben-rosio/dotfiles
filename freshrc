@@ -43,7 +43,6 @@ fresh shell/config/\*
 fresh shell/localrc.sh
 
 # Taskwarrior
-fresh ./task-warrior/hooks/on-exit.0 --file=$HOME/.task/hooks/on-exit.0
 fresh ./task-warrior/hooks/on-modify.blocks-attr.py --file=$HOME/.task/hooks/on-modify.blocks-attr.py
 if [[ ! -e "$HOME/.task/hooks/on-add.blocks-attr.py" ]]; then ln -s $HOME/.task/hooks/on-modify.blocks-attr.py $HOME/.task/hooks/on-add.blocks-attr.py; fi;
 if [[ ! -e "$HOME/.task/hooks/on-update.blocks-attr.py" ]]; then ln -s $HOME/.task/hooks/on-modify.blocks-attr.py $HOME/.task/hooks/on-update.blocks-attr.py; fi;
