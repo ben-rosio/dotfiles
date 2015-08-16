@@ -6,3 +6,6 @@ defaults write com.apple.finder QLEnableTextSelection -bool true
 
 # Don't change space when app gains focus
 defaults write com.apple.Dock workspaces-auto-swoosh -bool false
+
+# No bouncy icons
+defaults write com.apple.dock no-bouncing -bool TRUE
