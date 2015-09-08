@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Fixes screen captures having shadows between monitors and the like
 defaults write com.apple.screencapture disable-shadow -bool true
 
