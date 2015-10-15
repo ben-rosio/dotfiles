@@ -75,6 +75,7 @@ disable_daemon com.apple.TMCacheDelete
 function remove_ca {
     echo "Removing CA: ${2}"
     sudo /usr/bin/security delete-certificate -t -Z $1 /System/Library/Keychains/SystemRootCertificates.keychain
+    [[ $? != 0 ]] && echo
 }
 
 remove_ca "D1EB23A46D17D68FD92564C2F1F1601764D8E349" "AAA Certificate Services"
@@ -109,5 +110,10 @@ remove_ca "FAA7D9FB31B746F200A85E65797613D816E063B5" "VRK Gov. Root CA"
 remove_ca "E7B4F69D61EC9069DB7E90A7401A3CF47D4FE8EE" "WellsSecure Public Root Certificate Authority"
 
 # Disable captive portal window
-(cd /Library/Preferences/SystemConfiguration/CaptiveNetworkSupport && \
-    cp Settings.plist Settings.plist.orig;cat Settings.plist.orig | sed 's/\.apple\.com/\.localhost/g' > Settings.plist)
+(
+    cd /Library/Preferences/SystemConfiguration/CaptiveNetworkSupport;
+    if [[ -f Settings.plist ]]; then
+        [[ ! -f Settings.plist.orig ]] && sudo cp Settings.plist Settings.plist.orig;
+        sudo sh -c "cat Settings.plist.orig | sed 's/\.apple\.com/\.localhost/g' > Settings.plist"
+    fi
+)
