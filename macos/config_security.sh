@@ -117,3 +117,11 @@ remove_ca "E7B4F69D61EC9069DB7E90A7401A3CF47D4FE8EE" "WellsSecure Public Root Ce
         sudo sh -c "cat Settings.plist.orig | sed 's/\.apple\.com/\.localhost/g' > Settings.plist"
     fi
 )
+
+# Blacklist diffie-hellman based key-exchange protocols in Chrome
+# These are theorized to be insecure due to bruteforcing of commonly used primes by nation-states
+if [[ -f "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" ]]; then
+    /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --cipher-suite-blacklist=0x0033,0x0039,0x009E,0xcc15
+else
+    echo "Chrome not found, could not disable DHE ciphersuites"
+fi
