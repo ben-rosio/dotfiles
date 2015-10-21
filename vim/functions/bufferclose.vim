@@ -21,6 +21,10 @@ endfunction
 " Command ':Bclose!' is the same, but executes ':bd!' (discard changes).
 " An optional argument can specify which buffer to close (name or number).
 function! s:Bclose(bang, buffer)
+  if &filetype == 'git'
+    execute 'Gw'
+    return
+  endif
   if empty(a:buffer)
     let btarget = bufnr('%')
   elseif a:buffer =~ '^\d\+$'
