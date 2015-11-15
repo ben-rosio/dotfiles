@@ -49,6 +49,7 @@ Plugin 'szw/vim-ctrlspace'
 " Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'mileszs/ack.vim'
 
 " Git
 Plugin 'tpope/vim-fugitive'
