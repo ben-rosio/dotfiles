@@ -2,6 +2,7 @@
 Plugin 'L9'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
+Plugin 'vim-scripts/cmdalias.vim'
 
 " Faux orgmode
 Plugin 'vimwiki/vimwiki'
