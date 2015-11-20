@@ -50,7 +50,6 @@ map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 
-
 """"""""""""""""
 " Searching
 """"""""""""""""
@@ -81,3 +80,15 @@ map <leader>gs :Gstatus<CR>
 nnoremap <space>gd :Gdiff<CR>
 nnoremap <leader>gps :Dispatch! git push<CR>
 nnoremap <leader>gpl :Dispatch! git pull<CR>
+
+""""""""""""""""""""
+" Command Aliases
+""""""""""""""""""""
+runtime! plugin/cmdalias.vim
+
+if exists(':Alias')
+    " Resizing buffers
+    call CmdAlias('vres', 'vertical resize')
+else
+    echo "Sorry some initializations will be ignored as CmdAlias is nowhere to be found"
+endif
