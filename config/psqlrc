@@ -1,0 +1,10 @@
+-- Set character for null
+\pset null '¤'
+
+-- Show query times
+\timing
+
+\x auto
+\set VERBOSITY verbose
+\set COMP_KEYWORD_CASE upper
+\unset QUIET
