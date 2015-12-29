@@ -6,8 +6,6 @@ Plugin 'vim-scripts/cmdalias.vim'
 
 " Faux orgmode
 Plugin 'vimwiki/vimwiki'
-Plugin 'farseer90718/vim-taskwarrior'
-Plugin 'tbabej/taskwiki'
 
 " Visual
 Plugin 'bling/vim-airline'
