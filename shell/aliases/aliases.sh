@@ -1,11 +1,11 @@
-alias ll='ls -la'
+alias ll='ls -lah'
 
-alias ip='curl curlmyip.com -q'
+alias ip='curl ifconfig.co -q'
 
 alias cpv='rsync -poghb --backup-dir /tmp/rsync -e /dev/null --progress --'
 
-alias env="env | grep -iv 'secret' | grep -iv 'password'"
-
-alias find='find -E'
+alias env="env | egrep -iv '(secret|password)'"
 
 alias elixer='echo Did you mean iex?' # Because fuck iex as a command
+
+alias clearll='clear;ll'
