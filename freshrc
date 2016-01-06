@@ -87,6 +87,6 @@ init_vim() {
 fresh_after_build() {
     init_vim
     if [[ "$OSTYPE" == "darwin"* ]]; then
-        $HOME/.dotfiles/macos/config_*.sh
+        echo "Run $HOME/.dotfiles/macos/config_*.sh to configure mac.  May require password."
     fi
 }
