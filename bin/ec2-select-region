@@ -24,6 +24,12 @@ else
     echo "$REGIONS" > $REGION_CACHE_FILE;
 fi;
 
+if [ -z "$REGIONS" ]; then
+    echo "No regions could be retrieved."
+    rm $REGION_CACHE_FILE
+    exit 1
+fi
+
 REGION_NAMES=($(echo "$REGIONS" | awk '{print $2}'))
 REGION_URLS=($(echo "$REGIONS" | awk '{print $3}'))
 
@@ -62,7 +68,7 @@ echo "Setting url to: $selectedRegion"
 
 
 # Set url in bashrc or bashrc.local
-sed -i '' '/EC2_URL=/d' "$exportFile"
+sed -i'' '/EC2_URL=/d' "$exportFile"
 echo "export EC2_URL=\"$selectedRegion\"" >> "$exportFile"
 
 echo "source \"$exportFile\""
