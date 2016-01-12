@@ -26,6 +26,7 @@ fresh git/git contrib/completion/git-prompt.sh
 fresh awesome --file=~/.config/awesome/
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
+    fresh macos/mjolnir --file=~/.mjolnir/
     fresh macos/shell_\*.sh
 fi
 
