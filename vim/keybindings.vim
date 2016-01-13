@@ -56,7 +56,7 @@ map <leader>tm :tabmove
 
 " When pressing enter it will also run :noh to turn off highlights from
 " previous search
-nnoremap <CR> :noh<CR>
+nmap <CR> :noh<CR>
 
 
 """"""""""""""""
