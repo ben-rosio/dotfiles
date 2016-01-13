@@ -10,7 +10,7 @@ Plugin 'vimwiki/vimwiki'
 " Visual
 Plugin 'bling/vim-airline'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'suan/vim-instant-markdown'
+Plugin 'greyblake/vim-preview'
 
 " Editing
 Plugin 'scrooloose/nerdcommenter'
@@ -24,6 +24,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-abolish'
 Plugin 'ciaranm/detectindent'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'gabrielelana/vim-markdown'
 
 if v:version >= 703
     Plugin 'Valloric/YouCompleteMe'
