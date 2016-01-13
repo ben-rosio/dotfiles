@@ -25,9 +25,9 @@ _schoolSemester() {
             return 0
         fi;
 
-        return 1
-        echo "Failed to find current semester"
     done < ~/.dotfiles/school-semesters
+    return 1
+    echo "Failed to find current semester"
 }
 
 _schoolDirectory() {
