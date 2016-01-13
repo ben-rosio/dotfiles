@@ -10,7 +10,7 @@ Plugin 'vimwiki/vimwiki'
 " Visual
 Plugin 'bling/vim-airline'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'greyblake/vim-preview'
+Plugin 'nelstrom/vim-markdown-preview'
 
 " Editing
 Plugin 'scrooloose/nerdcommenter'
