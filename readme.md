@@ -34,6 +34,9 @@ pip install https://github.com/tbabej/tasklib/archive/develop.zip
 
 # Mac OS tmux fix
 brew install 'reattach-to-user-namespace'
+
+# Vim wiki markdown to HTML
+gem install vimwiki_markdown
 ```
 
 Extras
