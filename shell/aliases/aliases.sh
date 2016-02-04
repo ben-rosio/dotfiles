@@ -12,3 +12,5 @@ alias clearll='clear;ll'
 alias cll='clear;ll'
 
 alias gs='git status'
+
+alias format_json='python -mjson.tool'
