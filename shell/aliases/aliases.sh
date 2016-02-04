@@ -9,3 +9,6 @@ alias env="env | egrep -iv '(secret|password)'"
 alias elixer='echo Did you mean iex?' # Because fuck iex as a command
 
 alias clearll='clear;ll'
+alias cll='clear;ll'
+
+alias gs='git status'
