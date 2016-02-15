@@ -18,7 +18,7 @@ set relativenumber
 
 set so=4 " Set 4 lines to the cursor
 
-set modelines=1
+set modelines=4
 
 " Allow backspace to remove lines.
 set backspace=indent,eol,start
