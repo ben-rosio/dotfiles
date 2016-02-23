@@ -27,10 +27,10 @@ noremap <leader>bdf :Bclose!<CR>
 " Windows & Tabs
 """"""""""""""""
 " Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
 
 " Map alt+movement keys to ctrl+w followed by the movement key
 " Makes moving windows much simpler
