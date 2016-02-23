@@ -16,7 +16,8 @@ Post Installation
 # configure syntax linting/completion
 pushd ~/.vim/bundle/YouCompleteMe
 git submodule update --init --recursive
-./install.sh
+# ./install.sh
+./install.py --clang-completer --omnisharp-completer --gocode-completer --tern-completer --racer-completer
 popd
 
 # Markdown preview support
