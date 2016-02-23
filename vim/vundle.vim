@@ -42,6 +42,8 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'elzr/vim-json'
 Plugin 'aklt/plantuml-syntax'
 Plugin 'vim-scripts/vim-terraform'
+Plugin 'fatih/vim-go'
+Plugin 'tpope/vim-rails'
 if v:version <= 703
     Plugin 'JulesWang/css.vim' " only necessary if your Vim version < 7.4
 endif
