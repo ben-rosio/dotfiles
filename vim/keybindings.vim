@@ -15,6 +15,17 @@ noremap <Leader>mm mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
 
+""""""""""""""""
+" Text Manipulation
+""""""""""""""""
+
+" Remap s to insert single character after character under cursor
+nnoremap s :exec "normal a".nr2char(getchar())."\e"<CR>
+
+" Remap S to do what s did: delete the character under the cursor, and go into
+" insert mode.
+nnoremap S xi
+
 """""""""""""""
 " Buffers
 """""""""""""""
