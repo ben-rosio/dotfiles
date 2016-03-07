@@ -14,3 +14,5 @@ alias cll='clear;ll'
 alias gs='git status'
 
 alias format_json='python -mjson.tool'
+
+alias genpass="< /dev/urandom tr -dc 'a-zA-Z0-9-_!@#$%^&*()_+{}|:<>?=' | head -c 32"
