@@ -1,6 +1,8 @@
+alias vim="nvim"
+
 alias ll='ls -lah'
 
-alias ip='curl ifconfig.co -q'
+alias myip='curl ifconfig.co -q'
 
 alias cpv='rsync -poghb --backup-dir /tmp/rsync -e /dev/null --progress --'
 
