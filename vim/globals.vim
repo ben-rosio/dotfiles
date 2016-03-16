@@ -4,6 +4,9 @@ filetype on
 filetype plugin on
 filetype indent on
 
+" Show status bar
+set laststatus=2
+
 " No error bells
 set noerrorbells
 set novisualbell
