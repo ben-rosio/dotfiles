@@ -92,6 +92,12 @@ nnoremap <space>gd :Gdiff<CR>
 nnoremap <leader>gps :Dispatch! git push<CR>
 nnoremap <leader>gpl :Dispatch! git pull<CR>
 
+function! s:setupMarkdown()
+    nnoremap <leader>P :silent !open Marko.app '%:p'<CR>
+endfunction
+
+autocmd BufEnter *.md call s:setupMarkdown()
+
 """"""""""""""""""""
 " Command Aliases
 """"""""""""""""""""

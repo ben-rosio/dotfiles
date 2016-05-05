@@ -10,7 +10,6 @@ Plugin 'vimwiki/vimwiki'
 " Visual
 Plugin 'bling/vim-airline'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'nelstrom/vim-markdown-preview'
 Plugin 'ekalinin/Dockerfile.vim'
 
 " Editing
