@@ -17,3 +17,12 @@
 [mergetool "Kaleidoscope"]
     cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
     trustexitcode = true
+
+[alias]
+    branches = branch -a
+    tags = tag
+    stashes = stash list
+    unstage = reset -q HEAD --
+    discard = checkout --
+    graph = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
+    tocommit = diff --staged --diff-algorithm=minimal -w # Or not?
