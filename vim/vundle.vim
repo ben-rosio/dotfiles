@@ -43,6 +43,7 @@ Plugin 'aklt/plantuml-syntax'
 Plugin 'vim-scripts/vim-terraform'
 Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-rails'
+Plugin 'rust-lang/rust.vim'
 if v:version <= 703
     Plugin 'JulesWang/css.vim' " only necessary if your Vim version < 7.4
 endif
