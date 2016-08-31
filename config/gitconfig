@@ -10,7 +10,9 @@
 	name = ben
 
 [push]
-    default = current
+    default = simple
+[pull]
+    ff = only
 
 [difftool "Kaleidoscope"]
     cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
@@ -22,6 +24,8 @@
     branches = branch -a
     tags = tag
     stashes = stash list
+    remotes = remote -v
+    up = !git remote update -p
     unstage = reset -q HEAD --
     discard = checkout --
     graph = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
