@@ -61,10 +61,8 @@ fresh-options --file=~/.vimrc --marker=\"
     fresh vim/hardtime.vim
     fresh vim/make.vim
 
-    fresh twe4ked/dotfiles vim/vundle_before.vim
-    fresh vim/vundle.vim
+    fresh vim/plug.vim
     fresh vim/plugin_config/\*.vim
-    fresh twe4ked/dotfiles vim/vundle_after.vim
 
     fresh vim/globals.vim
     fresh vim/keybindings.vim
