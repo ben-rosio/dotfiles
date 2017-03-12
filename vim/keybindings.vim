@@ -1,7 +1,5 @@
 inoremap kj <Esc>
 
-command! Path echo expand('%:p')
-
 command! W w !sudo tee % > /dev/null
 
 " Remove the Windows ^M - when the encodings gets messed up
@@ -106,6 +104,9 @@ runtime! plugin/cmdalias.vim
 if exists(':Alias')
     " Resizing buffers
     call CmdAlias('vres', 'vertical resize')
+
+    " Print path
+    call CmdAlias('path', 'echo expand("%:p")')
 else
     echo "Sorry some initializations will be ignored as CmdAlias is nowhere to be found"
 endif

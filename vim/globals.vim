@@ -19,7 +19,7 @@ set hidden " Allow hidden buffers
 set number
 set relativenumber
 
-set so=4 " Set 4 lines to the cursor
+set so=3 " Set 4 lines to the cursor
 
 set modelines=4
 
